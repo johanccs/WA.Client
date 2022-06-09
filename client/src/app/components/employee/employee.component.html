@@ -1,0 +1,61 @@
+<div class="container-lg">
+    <p-card class="card my-5">
+        <div class="border-color mb-3">
+            <div class="text-sm text-center offline my-2">Add new employee</div>
+        </div>
+
+        <form (ngSubmit)="submit()" #f="ngForm" name="form" novalidate>
+            <div class="row">
+                <div class="col">
+                    <input id="name" 
+                        type="text"
+                        placeholder="Name" 
+                        pInputText
+                        name="name"
+                        [(ngModel)] = 'newEmployee.name' 
+                        class="p-inputtext-sm"> 
+                </div>
+                <div class="col">
+                    <input 
+                        type="text"
+                        placeholder="Surname" 
+                        id="surname" 
+                        pInputText
+                        name="surname"
+                        [(ngModel)] = 'newEmployee.surname' 
+                        class="p-inputtext-sm">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col">
+                    <select class="form-select dropdown"
+                            name="jobTitle"
+                            [(ngModel)]='newEmployee.jobTitleId'  
+                            aria-label="Default select example">
+                        <option selected>Job title</option>
+                        <option [ngValue] = "jobTitle.id" *ngFor="let jobTitle of jobTitles">{{jobTitle.jobTitle}}</option>
+                    </select>
+                </div>
+           
+                <div class="col">
+                    <input type="date" 
+                        class="date form-control"
+                        placeholder="Date"
+                        name="date"
+                        [(ngModel)] = 'newEmployee.dateOfBirth'   
+                        id="dob">
+                </div>
+            </div>
+            <div class="flex-col">
+                <button pButton 
+                        type="submit" 
+                        label={{buttonCaption}} 
+                        icon="pi pi-check" 
+                        class="p-button p-button-warning mx-4 mt-5">
+                </button>
+            </div>
+        </form>
+    </p-card>
+</div>
+
+<p-toast position="top-left" key="t1"></p-toast>

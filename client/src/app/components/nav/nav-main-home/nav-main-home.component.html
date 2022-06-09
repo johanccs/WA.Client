@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-color">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <label class='text-md-italic mb-2'>{{brand}}</label>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" 
+               aria-current="page"
+               [routerLinkActiveOptions]="{exact:true}" 
+               routerLinkActive="active"
+              [routerLink]="['employees']">
+              <label class="text-sm">
+                <i class="pi pi-users mx-1"></i>
+                <span class="text-sm menuItem">Employees</span>
+              </label>
+            </a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" 
+               aria-current="page"
+               [routerLinkActiveOptions]="{exact:true}" 
+               routerLinkActive="active"
+              [routerLink]="['projects']">
+              <label class="text-sm">
+                <i class="pi pi-box mx-1"></i>
+                <span class="text-sm menuItem">Projects</span>
+              </label>
+            </a>
+          </li>  
+        </ul>
+      </div>
+    </div>
+  </nav>
